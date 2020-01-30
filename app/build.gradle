@@ -1,0 +1,91 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.example.myapplication3"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation files('libs/access-bridge-64.jar')
+    implementation files('libs/android-driver-app-0.17.0.jar')
+    implementation files('libs/charsets.jar')
+    implementation files('libs/cldrdata.jar')
+    implementation files('libs/com.beust.jcommander.source_1.72.0.jar')
+    implementation files('libs/com.beust.jcommander_1.72.0.jar')
+    implementation files('libs/commons-codec-1.10.jar')
+    implementation files('libs/commons-logging-1.2.jar')
+    implementation files('libs/curvesapi-1.03.jar')
+    implementation files('libs/deploy.jar')
+    implementation files('libs/dnsns.jar')
+    implementation files('libs/dom4j-1.6.1.jar')
+    implementation files('libs/jaccess.jar')
+    implementation files('libs/java-client-4.1.0.jar')
+    implementation files('libs/java-client-6.0.0-BETA2.jar')
+    implementation files('libs/javaws.jar')
+    implementation files('libs/jce.jar')
+    implementation files('libs/jfr.jar')
+    implementation files('libs/jfxrt.jar')
+    implementation files('libs/jfxswt.jar')
+    implementation files('libs/jsse.jar')
+    implementation files('libs/junit-4.12.jar')
+    implementation files('libs/jxl.jar')
+    implementation files('libs/localedata.jar')
+    implementation files('libs/log4j-1.2.17.jar')
+    implementation files('libs/nashorn.jar')
+    implementation files('libs/org.apache-extras.beanshell.bsh.source_2.0.0.b6.jar')
+    implementation files('libs/org.apache-extras.beanshell.bsh_2.0.0.b6.jar')
+    implementation files('libs/org.testng.source_7.1.0.r202001120626.jar')
+    implementation files('libs/org.testng_7.1.0.r202001120626.jar')
+    implementation files('libs/org.yaml.snakeyaml.source_1.21.0.jar')
+    implementation files('libs/org.yaml.snakeyaml_1.21.0.jar')
+    implementation files('libs/plugin.jar')
+    implementation files('libs/poi-3.14-20160307.jar')
+    implementation files('libs/poi-examples-3.14-20160307.jar')
+    implementation files('libs/poi-excelant-3.14-20160307.jar')
+    implementation files('libs/poi-ooxml-3.14-20160307.jar')
+    implementation files('libs/poi-ooxml-schemas-3.14-20160307.jar')
+    implementation files('libs/poi-scratchpad-3.14-20160307.jar')
+    implementation files('libs/robotium-solo-5.6.0.jar')
+    implementation files('libs/rt.jar')
+    implementation files('libs/saxon-8.7.jar')
+    implementation files('libs/SaxonLiaison.jar')
+    implementation files('libs/selendroid-client-0.4.2-sources.jar')
+    implementation files('libs/selendroid-client-0.10.0.jar')
+    implementation files('libs/selendroid-client-0.10.0-sources.jar')
+    implementation files('libs/selendroid-client-0.16.0.jar')
+    implementation files('libs/selendroid-common-0.4.2.jar')
+    implementation files('libs/selendroid-common-0.17.0.jar')
+    implementation files('libs/selendroid-grid-plugin-0.17.0.jar')
+    implementation files('libs/selendroid-server-0.17.0.jar')
+    implementation files('libs/selendroid-server-common-0.17.0.jar')
+    implementation files('libs/selendroid-standalone-0.17.0-with-dependencies.jar')
+    implementation files('libs/selendroid-test-app-0.4.2-sources.jar')
+    implementation files('libs/selenium-server-standalone-3.0.0-beta2.jar')
+    implementation files('libs/selenium-server-standalone-3.4.0.jar')
+    implementation files('libs/sunec.jar')
+    implementation files('libs/sunjce_provider.jar')
+    implementation files('libs/sunmscapi.jar')
+    implementation files('libs/sunpkcs11.jar')
+    implementation files('libs/xmlbeans-2.6.0.jar')
+    implementation files('libs/zipfs.jar')
+}
