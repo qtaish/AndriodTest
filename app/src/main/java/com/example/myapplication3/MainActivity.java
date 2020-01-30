@@ -61,76 +61,78 @@ public class MainActivity {
     AndroidDriver<MobileElement> driver;
 
     @BeforeClass
-    public void setup() throws MalformedURLException{
-        DesiredCapabilities caps= new DesiredCapabilities();
+    public void setup() throws MalformedURLException {
+        DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("BROWSER_NAME", "Android");
         caps.setCapability("deviceName", "Galaxy S9");
-        caps.setCapability("VERSION","9.0");
-        caps.setCapability("platformName","Android");
+        caps.setCapability("VERSION", "9.0");
+        caps.setCapability("platformName", "Android");
         caps.setCapability("appPackage", "com.android.settings");
         caps.setCapability("appActivity", "com.android.settings.Settings");
         caps.setCapability("noReset", "true");
-        driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),caps);
+        driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 
-        @Test
-        public void Camping_PLMN_Selection()throws Exception {
-            // Power on in In-Service area -> Move to No SVC area -> wait 2 min -> Move to In service
-            //TC_name = "Camping_PLMN_Selection";
+    }
+
+    @Test
+    public void Camping_PLMN_Selection()throws Exception {
+        // Power on in In-Service area -> Move to No SVC area -> wait 2 min -> Move to In service
+        //TC_name = "Camping_PLMN_Selection";
 
 
-            WebElement conn = driver.findElement(By.xpath(".//android.widget.TextView[contains(@resource-id,'title') and @text='Connections' and @index='0']"));
-            conn.click();
+        WebElement conn = driver.findElement(By.xpath(".//android.widget.TextView[contains(@resource-id,'title') and @text='Connections' and @index='0']"));
+        conn.click();
 
-            Thread.sleep(2500);
+        Thread.sleep(2500);
 
-            WebElement Mob = driver.findElement(By.xpath(".//android.widget.TextView[contains(@resource-id,'id') and @text='Mobile networks' and @index='0']"));
-            Mob.click();
-            Thread.sleep(2000);
+        WebElement Mob = driver.findElement(By.xpath(".//android.widget.TextView[contains(@resource-id,'id') and @text='Mobile networks' and @index='0']"));
+        Mob.click();
+        Thread.sleep(2000);
 
-            WebElement Mode = driver.findElement(By.xpath(".//android.widget.TextView[contains(@resource-id,'title') and @text='Network mode SIM 1' and @index='0']"));
-            Mode.click();
-            Thread.sleep(2000);
-
-
-            WebElement GWL = driver.findElement(By.xpath(".//android.widget.CheckedTextView[@text='LTE/3G/2G (auto connect)' and @index='0']"));
-            GWL.click();
-            Thread.sleep(1500);
-
-            //((AndroidDeviceActionShortcuts) driver).pressKeyCode(AndroidKeyCode.HOME);
-
-            // ((StartsActivity) driver).startActivity(pckg2, act2);
-
-            // ((AndroidDeviceActionShortcuts) driver).pressKeyCode(AndroidKeyCode.KEYCODE_NUMPAD_MULTIPLY);
-            WebElement hash =driver.findElement(By.xpath(".//android.widget.TextView[contains(@resource-id,'id') and @text='#' and @index='0']"));
-            hash.click();
-
-            WebElement zero = driver.findElement(By.xpath(".//android.widget.TextView[contains(@resource-id,'id') and @text='0' and @index='0']"));
-            zero.click();
-            zero.click();
-            WebElement one = driver.findElement(By.xpath(".//android.widget.TextView[contains(@resource-id,'id') and @text='1' and @index='1']"));
-            one.click();
-            one.click();
-            hash.click();
-            Thread.sleep(1000);
-
-            WebElement stack = driver.findElement(By.xpath(".//android.widget.TextView[contains(@resource-id,'id') and @text='[1] STACK 1' and @index='0']"));
-            stack.click();
-            Thread.sleep(1000);
-            WebElement LTE = driver.findElement(By.xpath(".//android.widget.TextView[contains(@resource-id,'id') and @text='LTE-BASIC Info' and @index='0']"));
-            //WebElement WCDMA = driver.findElement(By.xpath(".//android.widget.TextView[contains(@resource-id,'id') and @text='WCDMA (2100)' and @index='0']"));
-            //try {
-            //if(!driver.findElements(By.xpath(".//android.widget.TextView[contains(@resource-id,'id') and @text='WCDMA (2100)' and @index='0']")).isEmpty()) {
-
-            //	System.out.println("3G Osama !!");
-            //}
+        WebElement Mode = driver.findElement(By.xpath(".//android.widget.TextView[contains(@resource-id,'title') and @text='Network mode SIM 1' and @index='0']"));
+        Mode.click();
+        Thread.sleep(2000);
 
 
-            driver.closeApp();
+        WebElement GWL = driver.findElement(By.xpath(".//android.widget.CheckedTextView[@text='LTE/3G/2G (auto connect)' and @index='0']"));
+        GWL.click();
+        Thread.sleep(1500);
+
+        //((AndroidDeviceActionShortcuts) driver).pressKeyCode(AndroidKeyCode.HOME);
+
+        // ((StartsActivity) driver).startActivity(pckg2, act2);
+
+        // ((AndroidDeviceActionShortcuts) driver).pressKeyCode(AndroidKeyCode.KEYCODE_NUMPAD_MULTIPLY);
+        WebElement hash =driver.findElement(By.xpath(".//android.widget.TextView[contains(@resource-id,'id') and @text='#' and @index='0']"));
+        hash.click();
+
+        WebElement zero = driver.findElement(By.xpath(".//android.widget.TextView[contains(@resource-id,'id') and @text='0' and @index='0']"));
+        zero.click();
+        zero.click();
+        WebElement one = driver.findElement(By.xpath(".//android.widget.TextView[contains(@resource-id,'id') and @text='1' and @index='1']"));
+        one.click();
+        one.click();
+        hash.click();
+        Thread.sleep(1000);
+
+        WebElement stack = driver.findElement(By.xpath(".//android.widget.TextView[contains(@resource-id,'id') and @text='[1] STACK 1' and @index='0']"));
+        stack.click();
+        Thread.sleep(1000);
+        WebElement LTE = driver.findElement(By.xpath(".//android.widget.TextView[contains(@resource-id,'id') and @text='LTE-BASIC Info' and @index='0']"));
+        //WebElement WCDMA = driver.findElement(By.xpath(".//android.widget.TextView[contains(@resource-id,'id') and @text='WCDMA (2100)' and @index='0']"));
+        //try {
+        //if(!driver.findElements(By.xpath(".//android.widget.TextView[contains(@resource-id,'id') and @text='WCDMA (2100)' and @index='0']")).isEmpty()) {
+
+        //	System.out.println("3G Osama !!");
+        //}
+
+
+        driver.closeApp();
 
 
 
 
-        }
+    }
 }
